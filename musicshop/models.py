@@ -132,7 +132,7 @@ class Cart(models.Model):
 
     owner = models.ForeignKey('Customer', verbose_name='Покупатель', on_delete=models.CASCADE)
     products = models.ManyToManyField(
-        CartProduct, blank=True, null=True, related_name='related_cart', verbose_name='Продукты для корзины')
+        CartProduct, blank=True,  related_name='related_cart', verbose_name='Продукты для корзины')
     total_products = models.IntegerField(default=0,  verbose_name='Общее кол-во товаров')
     final_price = models.DecimalField(max_digits=9, decimal_places=2, verbose_name='общая цена')
     in_order = models.BooleanField(default=False)
